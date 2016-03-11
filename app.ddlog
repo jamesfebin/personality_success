@@ -1,0 +1,4 @@
+people(
+  id int,
+  item1 text
+).

@@ -34,6 +34,11 @@ people_leadership_skills(people_id) = NULL::BOOLEAN :- people_personality(people
 
 @weight(2)
 people_leadership_skills(people_id) :-
+   people_personality(people_id,comfort_others,_,_,_,_,_,_,_,_,_),
+   comfort_others>3.
+
+@weight(2)
+people_leadership_skills(people_id) :-
    people_personality(people_id,_,_,_,_,_,_,_,_,_,accuracy),
    accuracy>80.
 
@@ -43,9 +48,40 @@ people_leadership_skills(people_id) :-
    bring_people_together>3.
 
 
+@weight(2)
+people_leadership_skills(people_id) :-
+   people_personality(people_id,_,_,cheer_people,_,_,_,_,_,_,_),
+   cheer_people>3.
+
+@weight(-3)
+people_leadership_skills(people_id) :-
+   people_personality(people_id,_,_,_,dislike_myself,_,_,_,_,_,_),
+   dislike_myself>3.
+
+@weight(-2)
+people_leadership_skills(people_id) :-
+   people_personality(people_id,_,_,_,_,wait_for_others,_,_,_,_,_),
+   wait_for_others>3.
+
+@weight(-2)
+people_leadership_skills(people_id) :-
+   people_personality(people_id,_,_,_,_,_,difficulty_approach_others,_,_,_,_),
+   difficulty_approach_others>3.
+
+
 @weight(-3)
 people_leadership_skills(people_id) :-
    people_personality(people_id,_,_,_,_,_,_,distrust_people,_,_,_),
    distrust_people>3.
+
+@weight(-2)
+people_leadership_skills(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,_,afraid_doing_things,_,_),
+   afraid_doing_things>3.
+
+@weight(2)
+people_leadership_skills(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,_,_,listener,_),
+   listener>3.
 
 

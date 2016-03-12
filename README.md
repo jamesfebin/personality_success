@@ -1,3 +1,3 @@
-# Simple DeepDive Example: Smoke Example
+# Leadership Candidate Curator
 
-See the [documentation about this simple example](../../doc/example-smoke.md) for more detail.
+

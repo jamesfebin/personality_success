@@ -9,14 +9,15 @@ people(
 ).
 
 people_personality(
-  people_id  id,
+  people_id  int,
   comfort_others int,
   bring_people_together int,
-  listener int,
   cheer_people int,
   dislike_myself int,
   wait_for_others int,
   difficulty_approach_others int,
   distrust_people int,
+  afraid_doing_things int,
+  listener int,
   accuracy int
 ).

@@ -1,4 +1,22 @@
+
+# Gender 1 for male , 2 for female , 3 for other , 0 if missed
+
 people(
   id int,
-  item1 text
+  age int,
+  gender int,
+  country text
+).
+
+people_personality(
+  people_id  id,
+  comfort_others int,
+  bring_people_together int,
+  listener int,
+  cheer_people int,
+  dislike_myself int,
+  wait_for_others int,
+  difficulty_approach_others int,
+  distrust_people int,
+  accuracy int
 ).

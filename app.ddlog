@@ -3,23 +3,23 @@
 
 people(
   id int,
-  age int,
   gender int,
+  age int,
   country text
 ).
 
 people_personality(
   people_id  int,
-  comfort_others int,
-  bring_people_together int,
-  cheer_people int,
-  dislike_myself int,
-  wait_for_others int,
-  difficulty_approach_others int,
-  distrust_people int,
-  afraid_doing_things int,
-  listener int,
-  accuracy int
+  self_worth int,
+  good_qualities int,
+  failure_level int,
+  do_thinks_like_others int,
+  not_proud_level int,
+  positive_attitude int,
+  satisfied_with_self int,
+  wish_more_respect int,
+  feel_useless int,
+  think_not_good int
 ).
 
 @extraction

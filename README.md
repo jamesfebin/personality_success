@@ -1,3 +1,0 @@
-# Leadership Candidate Curator
-
-

@@ -23,65 +23,107 @@ people_personality(
 ).
 
 @extraction
-people_leadership_skills?(
+people_success?(
   @key
-  @references(relation="person", column="id", alias="people")
+  @references(relation="people", column="id", alias="people")
   people_id int
 ).
 
 
-people_leadership_skills(people_id) = NULL::BOOLEAN :- people_personality(people_id,_,_,_,_,_,_,_,_,_,_).
+people_success(people_id) = NULL::BOOLEAN :- people_personality(people_id,_,_,_,_,_,_,_,_,_,_).
 
-@weight(2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,comfort_others,_,_,_,_,_,_,_,_,_),
-   comfort_others>3.
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,self_worth,_,_,_,_,_,_,_,_,_),
+   self_worth>4.
 
-@weight(2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,_,_,_,_,_,_,accuracy),
-   accuracy>80.
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,self_worth,_,_,_,_,_,_,_,_,_),
+   self_worth>3.
 
-@weight(2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,bring_people_together,_,_,_,_,_,_,_,_),
-   bring_people_together>3.
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,good_qualities,_,_,_,_,_,_,_,_),
+   good_qualities>4.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,good_qualities,_,_,_,_,_,_,_,_),
+   good_qualities>3.
+
+@weight(-1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,failure_level,_,_,_,_,_,_,_),
+   failure_level>3.
 
 
-@weight(2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,cheer_people,_,_,_,_,_,_,_),
-   cheer_people>3.
+@weight(-1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,failure_level,_,_,_,_,_,_,_),
+   failure_level>4.
 
-@weight(-3)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,dislike_myself,_,_,_,_,_,_),
-   dislike_myself>3.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,do_thinks_like_others,_,_,_,_,_,_),
+   do_thinks_like_others>4.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,do_thinks_like_others,_,_,_,_,_,_),
+   do_thinks_like_others>3.
+
+@weight(-1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,not_proud_level,_,_,_,_,_),
+   not_proud_level>3.
+
+@weight(-1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,not_proud_level,_,_,_,_,_),
+   not_proud_level>4.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,positive_attitude,_,_,_,_),
+   positive_attitude>3.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,positive_attitude,_,_,_,_),
+   positive_attitude>4.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,satisfied_with_self,_,_,_),
+   satisfied_with_self>3.
+
+@weight(1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,satisfied_with_self,_,_,_),
+   satisfied_with_self>3.
+
+@weight(-1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,_,wish_more_respect,_,_),
+   wish_more_respect>3.
+
+@weight(-1)
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,_,wish_more_respect,_,_),
+   wish_more_respect>4.
 
 @weight(-2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,_,wait_for_others,_,_,_,_,_),
-   wait_for_others>3.
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,_,_,feel_useless,_),
+   feel_useless>4.
 
 @weight(-2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,_,_,difficulty_approach_others,_,_,_,_),
-   difficulty_approach_others>3.
+people_success(people_id) :-
+   people_personality(people_id,_,_,_,_,_,_,_,_,feel_useless,_),
+   feel_useless>3.
 
 
-@weight(-3)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,_,_,_,distrust_people,_,_,_),
-   distrust_people>3.
-
-@weight(-2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,_,_,_,_,afraid_doing_things,_,_),
-   afraid_doing_things>3.
-
-@weight(2)
-people_leadership_skills(people_id) :-
-   people_personality(people_id,_,_,_,_,_,_,_,_,listener,_),
-   listener>3.
 
 
